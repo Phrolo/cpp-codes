@@ -8,6 +8,11 @@ int main(){
   std::cout << "Enter a year: ";
   std::cin >> year;
 
+  if (year == 1918) {
+    calendar = SPEC;
+    //std::cout << "Special Case" << std::endl;
+  }
+
   if ((1700 <= year) && (year <= 1917)) {
     calendar = JULIAN;
     //std::cout << "Julian" << std::endl;
@@ -17,12 +22,7 @@ int main(){
     calendar = GREGORIAN;
     //std::cout << "Gregorian" << std::endl;
   }
-
-  if (year == 1918) {
-    calendar = SPEC;
-    //std::cout << "Special Case" << std::endl;
-  }
-
+  
   febDays = 28;
   switch (calendar) {
     case JULIAN:
